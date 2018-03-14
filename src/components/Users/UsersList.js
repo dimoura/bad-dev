@@ -1,8 +1,36 @@
 import React, {Component} from 'react';
 
 class UsersList extends Component{
- 
+
+  data_user = [{
+    id: 1,
+    name: "Jeff",
+    role: "Developer",
+    isOnline: true,
+    current_task: "Home"
+  },
+  {
+    id: 2,
+    name: "Amarilis",
+    role: "UX",
+    isOnline: false,
+    current_task: "Checkout"
+  },
+  {
+    id: 3,
+    name: "Dani",
+    role: "Developer Jr",
+    isOnline: false,
+    current_task: "Menu"
+  }];
+
+  state = {
+    user_list: this.data_user
+  }
+
   render() {
+
+
 
     return(
       <div className="col-sm-9">
@@ -17,12 +45,14 @@ class UsersList extends Component{
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Usuário</td>
-                <td>Departamento</td>
-                <td>Online?</td>
-                <td>Tarefa Atual</td>
+            {this.state.user_list.map((item, k) =>
+              <tr key={k}>
+                <td>{item.name}</td>
+                <td>{item.role}</td>
+                <td>{item.isOnline ? 'Sim':'Não'}</td>
+                <td>{item.current_task}</td>
               </tr>
+            )}
             </tbody>
           </table>
         </div>
