@@ -21,7 +21,7 @@ var fakeDataSet = [
      ],
      "users":[
         {
-           "name":"Roludao",
+           "name":"Jeff",
            "role":"Developer"
         },
         {
@@ -111,7 +111,7 @@ class TasksList extends Component{
   }
   
   componentDidMount(){
-    // this.getAllTasks();
+    this.getAllTasks();
   }
   render(){
 
